@@ -1,5 +1,8 @@
 package hello.mybatispractice.boad.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,5 +25,11 @@ public class BoardController {
 		System.out.println("boardDTO = " + boardDTO);
 		boardService.save(boardDTO);
 		return "success";
+	}
+
+	@GetMapping("/list")
+	@Operation(summary = "게시글 목록 전체 조회", description = "게시글 목록 전체를 조회합니다.")
+	public List<BoardDTO> findAll() {
+		return boardService.findAll();
 	}
 }

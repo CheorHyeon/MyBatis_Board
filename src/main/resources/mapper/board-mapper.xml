@@ -11,4 +11,9 @@
                   #{boardTitle}, #{boardWriter}, #{boardPass}, #{boardContents}
               )
     </insert>
+
+    <!-- select 경우 resultType은 보통 있고, parameterType은 선택-->
+    <select id = "findAll" resultType="board">
+        select * from board_table order by id desc
+    </select>
 </mapper>
