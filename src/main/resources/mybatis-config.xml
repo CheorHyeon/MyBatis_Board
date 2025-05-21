@@ -3,5 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
+        <!-- type에 경로 확인! -->
+        <typeAlias type="hello.mybatispractice.boad.dto.BoardDTO" alias="board"></typeAlias>
     </typeAliases>
 </configuration>

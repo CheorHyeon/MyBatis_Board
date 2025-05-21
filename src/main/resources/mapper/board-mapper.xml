@@ -3,4 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Board">
+    <!-- parameterType은 mybatis-config.xml에서 typeAliases 태그로 적어둔 것만 사용 가능 -->
+    <!-- 그렇지 않으면 dto 파일의 패키지 전체 경로를 적어야 한다 -->
+    <insert id = "save" parameterType="board">
+        insert into board_table(boardTitle, boardWriter, boardPass, boardContents)
+        values(
+                  #{boardTitle}, #{boardWriter}, #{boardPass}, #{boardContents}
+              )
+    </insert>
 </mapper>
