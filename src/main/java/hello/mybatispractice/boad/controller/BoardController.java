@@ -2,6 +2,7 @@ package hello.mybatispractice.boad.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,6 +49,13 @@ public class BoardController {
 	@Operation(summary = "게시글 수정", description = "id에 해당하는 게시글을 수정합니다.")
 	public String update(@RequestBody BoardDTO boardDTO) {
 		boardService.patchDetails(boardDTO);
+		return "success";
+	}
+
+	@DeleteMapping("/{id}")
+	@Operation(summary = "게시글 삭제", description = "id에 해당하는 게시글을 삭제합니다.")
+	public String delete(@PathVariable @Schema(description = "삭제할 게시글 id", example = "3") Long id) {
+		boardService.delete(id);
 		return "success";
 	}
 }

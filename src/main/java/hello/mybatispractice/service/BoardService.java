@@ -39,4 +39,9 @@ public class BoardService {
 	public void patchDetails(BoardDTO boardDTO) {
 		boardRepository.patchDetails(boardDTO);
 	}
+
+	@Transactional
+	public void delete(Long id) {
+		boardRepository.delete(id);
+	}
 }

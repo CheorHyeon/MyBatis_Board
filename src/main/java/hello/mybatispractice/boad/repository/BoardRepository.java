@@ -36,4 +36,8 @@ public class BoardRepository {
 	public void patchDetails(BoardDTO boardDTO) {
 		sqlSession.update("Board.update", boardDTO);
 	}
+
+	public void delete(Long id) {
+		sqlSession.delete("Board.delete", id);
+	}
 }
