@@ -126,4 +126,4 @@ create table board_file_table
 ```
 
 ## 출처
-- [스프링부트 mybatis 게시판 프로젝트]([https://www.youtube.com/watch?v=8x8jZgGYt0k&list=PLV9zd3otBRt6n2MYMuYtOucBcJVH_TO5C&index=1](https://www.youtube.com/playlist?list=PLV9zd3otBRt6n2MYMuYtOucBcJVH_TO5C))
+- [스프링부트 mybatis 게시판 프로젝트](https://www.youtube.com/playlist?list=PLV9zd3otBRt6n2MYMuYtOucBcJVH_TO5C)
