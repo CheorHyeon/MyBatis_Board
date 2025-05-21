@@ -34,4 +34,9 @@ public class BoardService {
 	public BoardDTO findById(Long id) {
 		return boardRepository.findById(id);
 	}
+
+	@Transactional
+	public void patchDetails(BoardDTO boardDTO) {
+		boardRepository.patchDetails(boardDTO);
+	}
 }

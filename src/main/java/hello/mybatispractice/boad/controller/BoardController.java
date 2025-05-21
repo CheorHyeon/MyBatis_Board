@@ -3,6 +3,7 @@ package hello.mybatispractice.boad.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,5 +42,12 @@ public class BoardController {
 		boardService.updateHits(id);
 		// 상세내용 가져옴
 		return boardService.findById(id);
+	}
+
+	@PatchMapping
+	@Operation(summary = "게시글 수정", description = "id에 해당하는 게시글을 수정합니다.")
+	public String update(@RequestBody BoardDTO boardDTO) {
+		boardService.patchDetails(boardDTO);
+		return "success";
 	}
 }

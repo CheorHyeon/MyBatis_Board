@@ -32,4 +32,8 @@ public class BoardRepository {
 		// 조회할때 하나면 One, 여러개면 List 메서드 사용
 		return sqlSession.selectOne("Board.findById", id);
 	}
+
+	public void patchDetails(BoardDTO boardDTO) {
+		sqlSession.update("Board.update", boardDTO);
+	}
 }
