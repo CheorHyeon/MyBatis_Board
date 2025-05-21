@@ -23,4 +23,13 @@ public class BoardRepository {
 	public List<BoardDTO> findAll() {
 		return sqlSession.selectList("Board.findAll");
 	}
+
+	public void updateHits(Long id) {
+		sqlSession.update("Board.updateHits", id);
+	}
+
+	public BoardDTO findById(Long id) {
+		// 조회할때 하나면 One, 여러개면 List 메서드 사용
+		return sqlSession.selectOne("Board.findById", id);
+	}
 }

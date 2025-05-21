@@ -24,4 +24,14 @@ public class BoardService {
 	public List<BoardDTO> findAll() {
 		return boardRepository.findAll();
 	}
+
+	@Transactional
+	public void updateHits(Long id) {
+		boardRepository.updateHits(id);
+	}
+
+	@Transactional(readOnly = true)
+	public BoardDTO findById(Long id) {
+		return boardRepository.findById(id);
+	}
 }
